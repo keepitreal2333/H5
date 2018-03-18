@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="Author" content="bs" />
+<meta name="Description" content="description" />
+<meta name="Keywords" content="keywords" />
+<title></title>
+<style>
+	*{margin: 0; padding: 0;}
+	ul,li{list-style: none;}
+	#index{width: 1200px; margin: 0 auto; border: 1px solid #ccc;}
+	#header{width: 100%; height: 120px; background: #ddd;}
+	#header h1,#header h4{text-align: center; line-height: 60px;}
+	#nav{background: #eee;}
+	#nav ul{height: 50px;}
+	#nav ul li{float: left; width: 200px; height: 30px; line-height: 30px; margin-top: 10px; text-align: center; border-right: 1px solid #ddd; box-sizing: border-box; cursor: pointer;}
+	#content{position: relative;}
+	#introduce{position: relative; border-bottom: 1px solid #ccc; padding: 20px;}
+	#introduce figure{width: 300px; height: 200px; position: relative;}
+	#introduce figure figcaption{position: absolute; bottom: 0; width: 100%; height: 40px; background: rgba(0,0,0,0.5); text-align: center; line-height: 40px; color: white;}
+	#introduce .data{position: absolute; top: 18px; left: 400px;}
+	#introduce .data li{height: 40px; line-height: 40px;}
+	#introduce .data li span{color: green;}
+	#skill .box{padding: 40px;}
+	#skill .box p{font-size: 20px; font-weight: bold; text-indent: 5px; margin: 3px;}
+	#skill .box meter{width: 100px; height: 20px; margin: 5px;}
+	#skill .box progress{margin: 15px 5px; vertical-align: middle;}
+	#skill .box input{width: 50px; height: 20px; vertical-align: middle; background: red; border:none; color: white; cursor: pointer;}
+	#arti .title{font-size: 20px; font-weight: bold; text-align: center;}
+	#arti .text{width: 800px; margin: 20px auto 50px; text-indent: 20px;}
+	#asidenav{position: absolute; top: 0; right: -55px;}
+	#asidenav ul li{width: 50px; height: 40px; background: #ccc; margin: 5px; text-align: center; line-height: 40px; cursor: pointer;}
+	#footer{width: 100%; height: 40px; background: #ddd; text-align: center; line-height: 40px;}
+</style>
+</head>
+<body>
+	<section id="index">
+		<header id="header">
+			<h1>一个页面</h1>
+			<h4>a page</h6>
+		</header>
+		<nav id="nav">
+			<ul>
+				<li>sawada</li>
+				<li>tsunayoshi</li>
+				<li>hibari</li>
+				<li>kyoya</li>
+				<li>reborn</li>
+				<li>lambo</li>
+			</ul>
+		</nav>
+		<section id="content">
+			<section id="introduce">
+				<figure>
+					<img src="images/tsuna.jpg" alt="tsuna" width="300" height="200" />
+					<figcaption>Vongola X</figcaption>
+				</figure>
+				<ul class="data">
+					<li>name : <span>tsuna</span></li>
+					<li>sex : <span>male</span></li>
+					<li>date of birth : <span>10.14</span></li>
+					<li>address : <span>namimori</span></li>
+					<li>summary : <span>vongola X</span></li>
+				</ul>
+			</section>
+			<section id="skill">
+				<section class="box">
+					<p>personal skill</p>
+					<meter value="9" min="0" max="10" high="9" low="5"></meter><span>ゼロ地点突破</span><br />
+					<meter value="9" min="0" max="10" high="9" low="5"></meter><span>X BURNER</span><br />
+					<meter value="9" min="0" max="10" high="9" low="5"></meter><span>X BURNER AIR</span><br />
+					<progress id="pro" value="5" max="100"></progress>
+					<input type="button" name="reborn" value="reborn" />
+				</section>
+			</section>
+			<article id="arti">
+				<p class="title">title</p>
+				<p class="text">
+					Here is the text!Here is the text!Here is the text!Here is the text!Here is the text!Here is the text!Here is the text!Here is the text!Here is the text!Here is the text!Here is the text!Here is the text!Here is the text!Here is the text!Here is the text!Here is the text!Here is the text!Here is the text!Here is the text!
+				</p>
+			</article>
+			<aside id="asidenav">
+				<ul>
+					<li>27</li>
+					<li>18</li>
+					<li>59</li>
+					<li>80</li>
+					<li>69</li>
+					<li>32</li>
+					<li>L</li>
+				</ul>
+			</aside>
+		</section>
+		<footer id="footer">
+			this is the footer
+		</footer>
+	</section>
+	<script>
+		var oProgress = document.getElementById("pro"),
+			oButton = document.getElementsByTagName("input")[0];
+		oButton.onclick = function(){
+			var step = 0;
+			(function reborn(){
+				if(step<100) step++;
+				oProgress.value = step;
+				requestAnimationFrame(reborn);
+			})();	
+		}
+	</script>
+</body>
+</html>
