@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="Author" content="bs" />
+<meta name="Description" content="description" />
+<meta name="Keywords" content="keywords" />
+<title></title>
+<style>
+	*{margin: 0; padding: 0;}
+	ul,li{list-style: none;}
+	body{overflow: hidden;}
+	#index{position: relative; width: 1366px; height: 768px;}
+	#top{width: 100%; position: absolute; z-index: 5;}
+	#top .navbar{width: 100%; margin: 0 auto; background: rgba(0,0,0,0.5);}
+	#top .navbar section{float: left; line-height: 60px; margin-left: 50px;}
+	#top .navbar ul{overflow: hidden;}
+	#top .navbar li{float: right; line-height: 60px; margin: 0 45px;}
+	#top .navbar div{position: absolute; top: 0; left: 0; width: 1366px; height: 768px; z-index: -100; display: none;}
+	#top .navbar div img{width: 100%; height: 100%;}
+	#bottom{position: absolute; bottom: 60px; width: 100%; height: 60px; background: rgba(0,0,0,0.5); z-index: 5;}
+	#top .navbar label{color: white; font-weight: bold;}
+	#top .navbar input{position: absolute; top: -9999px; left: -9999px;}
+	#top .navbar input:checked ~ div{display: block;}
+	#top .navbar input:checked ~ label{color: black;}
+</style>
+</head>
+<body>
+	<section id="index">
+		<section id="top">
+			<nav class="navbar">
+				<section>
+					<input type="radio" name="tabcard" id="arc" checked />
+					<label for="arc">ARCOBALENO</label>
+					<div>
+						<img src="images/arcobaleno.png" alt="arcobaleno" />
+					</div>
+				</section>
+				<ul>
+					<li>
+						<input type="radio" name="tabcard" id="arccol" />
+						<label for="arccol">Colonnello</label>
+						<div>
+							<img src="images/colonnello.jpg" alt="colonnello" />
+						</div>
+					</li>
+					<li>
+						<input type="radio" name="tabcard" id="arcfon" />
+						<label for="arcfon">Fon</label>
+						<div>
+							<img src="images/fon.jpg" alt="fon" />
+						</div>
+					</li>
+					<li>
+						<input type="radio" name="tabcard" id="arcmam" />
+						<label for="arcmam">Mammon</label>
+						<div>
+							<img src="images/mammon.jpg" alt="mammon" />
+						</div>
+					</li>
+					<li>
+						<input type="radio" name="tabcard" id="arcsku" />
+						<label for="arcsku">Skull</label>
+						<div>
+							<img src="images/skull.jpg" alt="skull" />
+						</div>
+					</li>
+					<li>
+						<input type="radio" name="tabcard" id="arcver" />
+						<label for="arcver">Verde</label>
+						<div>
+							<img src="images/verde.jpg" alt="verde" />
+						</div>
+					</li>
+					<li>
+						<input type="radio" name="tabcard" id="arcluc" />
+						<label for="arcluc">Luce</label>
+						<div>
+							<img src="images/luce.jpg" alt="luce" />
+						</div>
+					</li>
+					<li>
+						<input type="radio" name="tabcard" id="arcreb" />
+						<label for="arcreb">Reborn</label>
+						<div>
+							<img src="images/reborn.jpg" alt="reborn" />
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</section>
+		<footer id="bottom"></footer>
+	</section>
+</body>
+</html>
