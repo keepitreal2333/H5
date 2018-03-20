@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="Author" content="bs" />
+<meta name="Description" content="description" />
+<meta name="Keywords" content="keywords" />
+<title></title>
+<style>
+	*{margin: 0; padding: 0}
+	ul,li{list-style: none;}
+	section{width: 200px; margin: 100px auto;}
+	input{display: inline-block; margin: 30px 20px; vertical-align: middle;}
+</style>
+</head>
+<body>
+	<section>
+		R:<input type="range" id="color_red" min="0" max="255" onchange="changeColor()" />
+		G:<input type="range" id="color_green" min="0" max="255" onchange="changeColor()" />
+		B:<input type="range" id="color_blue" min="0" max="255" onchange="changeColor()" />
+	</section>
+	<script>
+		let cred = document.getElementById("color_red"),
+			cblue = document.getElementById("color_blue"),
+			cgreen = document.getElementById("color_green"),
+			r,g,b;
+		function changeColor(){
+			r = cred.value;
+			g = cblue.value;
+			b = cgreen.value;
+			document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
+		}
+	</script>
+</body>
+</html>
