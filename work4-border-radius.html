@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="Author" content="bs" />
+<meta name="Description" content="description" />
+<meta name="Keywords" content="keywords" />
+<title></title>
+<style>
+	*{margin: 0; padding: 0}
+	ul,li{list-style: none;}
+	#index ul{width: 1216px; margin: 50px auto; overflow: hidden;}
+	#index ul li{width: 300px; height: 300px; float: left; margin: 2px; background: #ccc;}
+	#index ul li div{position: relative; width: 300px; height: 300px; background: white;}
+	#index ul li:nth-child(1) div{border-radius: 50%;}
+	#index ul li:nth-child(2) div{border-radius: 50% 50% 0 0;}
+	#index ul li:nth-child(3) div{height: 50%; margin: 25% auto 0; border-radius: 150px 150px 0 0;}
+	#index ul li:nth-child(4) div{border-radius: 50% 0 0 0;}
+	#index ul li:nth-child(5) div{width: 50%; height: 50%; margin: 25% auto 0; border-radius: 150px 0 0 0;}
+	#index ul li:nth-child(6) div{height: 50%; margin: 25% auto 0; border-radius: 50%;}
+	#index ul li:nth-child(7) div{width: 50%; margin: 0 auto; border-radius: 50%;}
+	#index ul li:nth-child(8) div{height: 25%; margin: 40% auto 0; border-radius: 150px 150px 0 0 / 75px 75px 0 0;}
+	#index ul li:nth-child(9) div{width: 25%; margin: 0 auto; border-radius: 150px 0 0 150px / 300px 0 0 300px;}
+	#index ul li:nth-child(10) div{width: 25%; height: 50%; margin: 25% auto 0; border-radius: 150px 0 0 0 / 300px 0 0 0;}
+	#index ul li:nth-child(11) div{width: 50%; height: 50%; margin: 0 auto; background: #ccc; border: 75px solid white; border-radius: 50%;}
+	#index ul li:nth-child(12) div{width: 50%; height: 50%; margin: 0 auto; background: #ccc; border: 75px solid white; border-radius: 75px;}
+	#index ul li:nth-child(13) div{width: 25%; height: 25%; margin: 12% auto 0; background: #ccc; border: 75px solid white; border-radius: 100% 0 0 0;}
+	#index ul li:nth-child(14) div{width: 25%; height: 25%; margin: 12% auto 0; background: #ccc; border: 75px solid white; border-radius: 150px 0 150px 0;}
+	#index ul li:nth-child(15) div{width: 0; height: 0; margin: 25% auto 0; border: 75px; border-style: solid; border-color: pink lightblue lightgreen transparent;}
+	#index ul li:nth-child(16) div{width: 0; height: 0; margin: 25% auto 0; border: 75px; border-style: solid; border-color: pink lightblue #ccc lightgreen;}
+	#index ul li:nth-child(17) div{width: 0; height: 0; margin: 25% auto 0; border: 75px; border-style: solid; border-color: white #ccc white white;}
+	#index ul li:nth-child(18) div{width: 0; height: 0; margin: 25% auto 0; border: 75px; border-style: solid; border-color: transparent #ccc transparent transparent; border-radius: 50%;}
+	#index ul li:nth-child(19) div{width: 0; height: 0; margin: 25% auto 0; border: 75px; border-style: solid; border-color: #ccc transparent #ccc #ccc; border-radius: 50%;}
+	#index ul li:nth-child(20) div{width: 0; height: 0; border: 150px; border-style: solid; border-color: white white grey grey; border-radius: 50%; transform: rotate(-45deg);}
+	#index ul li:nth-child(21) div{height: 150px; border-bottom-width: 150px; border-style: solid; border-color: transparent transparent black transparent; border-radius: 50%; background: white;}
+	#index ul li:nth-child(21) div::before,#index ul li:nth-child(21) div::after{position: absolute; content: ""; width: 30px; height: 30px; top: 50%; border-width: 60px; border-style: solid; border-radius: 50%;}
+	#index ul li:nth-child(21) div::before{background: white; left: 0; border-color: black;}
+	#index ul li:nth-child(21) div::after{background: black; right: 0; border-color: white;}
+	#index ul li:nth-child(22) div{width: 75%; height: 25%; margin: 40% 10%; background: white;}
+	#index ul li:nth-child(22) div::after{position: absolute; content: ""; width: 0; height: 0; border-width: 20px; border-style: solid; border-color: #ccc #ccc #ccc white; top: 20px; right: -40px;}
+	#index ul li:nth-child(23) div{width: 50%; height: 75%; margin: 10% auto 0; background: white; border-radius: 0 0 75px 0 / 0 0 150px 0;}
+	#index ul li:nth-child(23) div::after{position: absolute; content: ""; width: 50px; height: 50px; background: #ccc; top: 90px; right: 0; border-radius: 0 0 100% 0;}
+	#index ul li:nth-child(24) div{width: 75%; height: 25%; margin: 40% 10%; background: white;}
+	#index ul li:nth-child(24) div::after{position: absolute; content: ""; width: 30px; height: 10px; border-width: 0 0 30px 20px; border-color: white; border-style: solid; border-radius: 0 0 100% 0; top: 5px; right: -30px;}
+</style>
+</head>
+<body>
+	<section id="index">
+		<ul></ul>
+	</section>
+	<script type="text/javascript">
+		var ulList = document.getElementsByTagName("ul")[0];
+		for(var i=0;i<24;i++){
+			var liLists = document.createElement("li");
+			var box = document.createElement("div");
+			liLists.appendChild(box);
+			ulList.appendChild(liLists);
+		}
+	</script>
+</body>
+</html>
