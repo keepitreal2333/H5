@@ -9,8 +9,9 @@
 <style>
 	*{margin: 0; padding: 0}
 	ul,li{list-style: none;}
-	#box{width: 300px; height: 300px; margin: 50px auto; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 0 15px 5px #ddd; perspective: 800px;}
-	ul{position: relative; width: 200px; height: 200px; margin: 50px auto; animation: roll .5s 2; animation-fill-mode: forwards; transform-style: preserve-3d; transform-origin: center center -100px;}
+	#index{width: 500px; height: 500px; margin: 50px auto;}
+	#box{width: 300px; height: 300px; margin: 50px auto; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 0 15px 5px #ddd; perspective: 800px; perspective-origin: top center;}
+	ul{position: relative; width: 200px; height: 200px; margin: 50px auto; transform-style: preserve-3d; transform-origin: center center -100px;}
 	ul li{position: absolute; width: 200px; height: 200px; border: 1px solid grey; border-radius: 10px; background-color: white;}
 	ul li:nth-child(1){z-index: 1}
 	ul li:nth-child(2){left: -200px; transform: rotateY(-90deg); transform-origin: right;}
@@ -46,46 +47,70 @@
 	ul li .six:nth-child(3n-2){top: 35px;}
 	ul li .six:nth-child(3n-1){top: 85px;}
 	ul li .six:nth-child(3n){top: 135px;}
-	@keyframes roll{100%{transform: rotate3d(1,1,1,270deg)}}
+	input{width: 100px; height: 30px; margin-left: 200px;}
 </style>
 </head>
 <body>
-	<section id="box">
-		<ul>
-			<li>
-				<p class="one"></p>
-			</li>
-			<li>
-				<p class="two two_f"></p>
-				<p class="two two_s"></p>
-			</li>
-			<li>
-				<p class="three three_f"></p>
-				<p class="three three_s"></p>
-				<p class="three three_t"></p>
-			</li>
-			<li>
-				<p class="four"></p>
-				<p class="four"></p>
-				<p class="four"></p>
-				<p class="four"></p>
-			</li>
-			<li>
-				<p class="five"></p>
-				<p class="five"></p>
-				<p class="five"></p>
-				<p class="five"></p>
-				<p class="five"></p>
-			</li>
-			<li>
-				<p class="six"></p>
-				<p class="six"></p>
-				<p class="six"></p>
-				<p class="six"></p>
-				<p class="six"></p>
-				<p class="six"></p>
-			</li>
-		</ul>
+	<section id="index">
+		<section id="box">
+			<ul>
+				<li>
+					<p class="one"></p>
+				</li>
+				<li>
+					<p class="two two_f"></p>
+					<p class="two two_s"></p>
+				</li>
+				<li>
+					<p class="three three_f"></p>
+					<p class="three three_s"></p>
+					<p class="three three_t"></p>
+				</li>
+				<li>
+					<p class="four"></p>
+					<p class="four"></p>
+					<p class="four"></p>
+					<p class="four"></p>
+				</li>
+				<li>
+					<p class="five"></p>
+					<p class="five"></p>
+					<p class="five"></p>
+					<p class="five"></p>
+					<p class="five"></p>
+				</li>
+				<li>
+					<p class="six"></p>
+					<p class="six"></p>
+					<p class="six"></p>
+					<p class="six"></p>
+					<p class="six"></p>
+					<p class="six"></p>
+				</li>
+			</ul>
+		</section>
+		<input type="button" id="rolldice" value="投掷" />
+		<input type="button" id="stop" value="停止" />
 	</section>
+	<script type="text/javascript">
+		var ulList = document.getElementsByTagName("ul")[0],
+			start = document.getElementById("rolldice"),
+			stop = document.getElementById("stop"),
+			x=0,y=0,z=0;
+		start.onclick = function(){
+			var clear = setInterval(function(){
+				x += Math.random()*5;
+				y += Math.random()*5;
+				z += Math.random()*5;
+				if(x>=360){x = 0;}
+				else if(y>=360){y = 0;}
+				else if(z>=360){z = 0;}
+				ulList.style.transform = "rotateX("+ x +"deg) rotateY("+ y +"deg) rotateZ(" + z + "deg)";
+			},0);
+			stop.onclick = function(){
+				clearInterval(clear);
+			}
+		}
+	</script>
 </body>
 </html>
