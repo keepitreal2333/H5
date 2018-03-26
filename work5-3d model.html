@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="Author" content="bs" />
+<meta name="Description" content="description" />
+<meta name="Keywords" content="keywords" />
+<title></title>
+<style>
+	*{margin: 0; padding: 0}
+	ul,li{list-style: none;}
+	html,body{height: 100%; transform-style: preserve-3d;}
+	body{background: black; perspective: 1000px;}
+	#index{position: absolute; top: 45%; left: 50%; margin-left: -175px; margin-top: -150px; width: 350px; height: 300px; transform-style: preserve-3d; transform-origin: center;}
+	#index:hover{transform: rotateX(360deg);}
+	#index section{position: absolute; left: 0; top: 0; width: 100%; height: 100%; border-radius: 5%;}
+	#index section .left{position: absolute; top: 50%; left: -2px; margin-top: -177px; width: 354px; height: 354px; border: 1px solid #3ae4ff; opacity: 0.5; border-radius: 5%; transform: rotate(35deg);}
+	#index section .right{position: absolute; left: 50px; top: 25px; width: 250px; height: 250px; border: 1px solid #3ae4ff; transform: rotate(55deg); opacity: 0.5;}
+</style>
+</head>
+<body>
+	<section id="index"></section>
+	<script>
+		let index = document.getElementById("index"),
+			angle = 360,
+			deg = 4.5,
+			count = Math.floor((angle/deg)/2),
+			[x,y,z,str] = [0,0,45,""];
+		for(let i=0;i<count;i++){
+			str += `
+				<section style = "transform:rotateY(${deg*i}deg)">
+					<div class = "left"></div>
+					<div class = "right"></div>
+				</section>
+			`;
+		}
+		index.innerHTML = str;
+		(function move(){
+			setInterval(function(){
+				x += 0.5;
+				y += 0.5;
+				z += 0.5;
+				if(x>=360){x = 0;}
+				else if(y>=360){y = 0;}
+				else if(z>=360){z = 0;}
+				index.style.transform = "rotateX("+ x +"deg) rotateY("+ y +"deg) rotateZ(" + z + "deg) ";
+			},10);
+		})();
+	</script>
+</body>
+</html>
