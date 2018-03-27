@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="Author" content="bs" />
+<meta name="Description" content="description" />
+<meta name="Keywords" content="keywords" />
+<title></title>
+<style>
+	*{margin: 0; padding: 0}
+	ul,li{list-style: none;}
+	html,body{width: 100%; height: 100%; perspective: 1000px; perspective-origin: center center; transform-style: preserve-3d;}
+	#platform{position: relative; width: 800px; height: 400px; margin: 0 auto; background: radial-gradient(#212121 5%,#000 50%); transform: rotateX(45deg); transform-style: preserve-3d;}
+	#book{position: absolute; top: 25%; left: 50%; width: 150px; height: 200px;}
+	#book p{position: absolute; width: 150px; height: 200px; background: #fff; transform-origin: left center; transition: 1s; box-shadow: 0 1px 3px 0 #000;}
+	#book .firstPage,#book .lastPage{background: #732020; border: 2px solid #733832; border-radius: 5px;}
+	#book .firstPage{z-index: 2; text-align: center; line-height: 100px;}
+	#book .lastPage{z-index: -1;}
+</style>
+</head>
+<body>
+	<section id="platform">
+		<section id="book">
+			<p class="firstPage">Book</p>
+			<p class="lastPage"></p>
+		</section>
+	</section>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		let n = 0;
+		for(let i=0;i<10;i++){
+			let page = $("<p></p>");
+			$(".firstPage").after(page);
+		}
+		$("p").click(function(e){
+			$(this).css("transform","rotateY(-180deg)");
+			$(this).css("z-index",n);
+			n++;
+		});
+	</script>
+</body>
+</html>
